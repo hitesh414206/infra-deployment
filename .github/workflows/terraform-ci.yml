@@ -16,7 +16,7 @@ jobs:
 
         strategy:
             matrix:
-                ebv: [dev]
+                env: [dev]
         
         steps:
             - name: Checkout code
