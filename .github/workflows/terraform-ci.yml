@@ -14,9 +14,8 @@ jobs:
     terraform:
         runs-on: ubuntu-latest
 
-        strategy:
-            matrix:
-                env: [dev]
+        environment:
+            name: dev
         
         steps:
             - name: Checkout code
