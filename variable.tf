@@ -1,4 +1,4 @@
 variable "bucket_name" {
-    type = string
-    default = "hitesh-demo-bucket-12345"
+  type    = string
+  default = "hitesh-demo-bucket-12345"
 }
