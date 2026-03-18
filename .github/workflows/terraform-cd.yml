@@ -24,17 +24,17 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v4
             
-            - name: Download Plan Artifact
-              run: aws s3 cp s3://terraform-plan-hitesh/tfplan tfplan
-            
-            - name: Setup Terraform
-              uses: hashicorp/setup-terraform@v3
-            
             - name: Configure AWS Credentials
               uses: aws-actions/configure-aws-credentials@v4
               with:
                 role-to-assume: ${{ secrets.ROLE_ARN }}
                 aws-region: "eu-west-1"
+            
+            - name: Download Plan Artifact
+              run: aws s3 cp s3://terraform-plan-hitesh/tfplan tfplan
+            
+            - name: Setup Terraform
+              uses: hashicorp/setup-terraform@v3
             
             - name: Terraform Init
               run: terraform init
